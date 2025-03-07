@@ -1,0 +1,210 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    color: white;
+    background: radial-gradient(circle at 50% 50%, #0f0f0f, #000000);
+    overflow: auto;
+}
+
+#particles-js {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.container {
+    max-width: 800px;
+    margin: auto;
+    text-align: center;
+    padding: 50px 20px;
+    position: relative;
+    z-index: 1;
+}
+
+h1, h2 {
+    font-weight: bold;
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.logo {
+    width: 100px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+/* Анимация печатающегося текста */
+.typewriter {
+    overflow: hidden;
+    white-space: normal; /* Разрешаем перенос текста */
+    margin: 0 auto;
+    animation: typing 6s steps(60, end); /* Увеличиваем время анимации */
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+/* Анимация появления карточек проектов */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 1s ease-out forwards;
+    animation-delay: 6s; /* Задержка после завершения анимации текста */
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.project-card {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.project-card h3 {
+    margin-top: 0;
+}
+
+.project-card a {
+    display: inline-block;
+    margin-top: 10px;
+    color: #fff;
+}
+
+/* Стили для переключателя темы */
+.theme-switch {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.theme-switch input {
+    display: none;
+}
+
+.toggle-slider {
+    width: 60px;
+    height: 30px;
+    background: #555;
+    border-radius: 15px;
+    position: relative;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.toggle-slider::before {
+    content: '';
+    position: absolute;
+    width: 26px;
+    height: 26px;
+    background: #fff;
+    border-radius: 50%;
+    top: 2px;
+    left: 2px;
+    transition: transform 0.3s ease;
+}
+
+input:checked + .toggle-slider {
+    background: #00c3ff;
+}
+
+input:checked + .toggle-slider::before {
+    transform: translateX(30px);
+}
+
+/* Кнопка Download CV */
+.cta-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #000;
+    color: #fff;
+    border: 2px solid #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.cta-button:hover {
+    background: #fff;
+    color: #000;
+}
+
+/* Иконки соцсетей */
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    background: #000;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    color: #fff;
+    text-decoration: none;
+    font-size: 24px;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.social-links a:hover {
+    background: #fff;
+    color: #000;
+}
+
+.social-links a i {
+    transition: transform 0.3s ease;
+}
+
+.social-links a:hover i {
+    transform: scale(1.2);
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+    h1 {
+        font-size: 24px;
+    }
+    h2 {
+        font-size: 20px;
+    }
+}
